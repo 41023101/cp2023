@@ -1,0 +1,25 @@
+溫度轉換
+
+1. `#include <stdio.h>`: 這是一個預處理指示，它包含了標準輸入輸出函式庫（Standard Input/Output Library），使您可以使用諸如`printf`和`scanf`等函式。這是C語言中的一個標準操作。
+
+2. `float temp_f;`: 這行聲明了一個名為`temp_f`的浮點數變數，用於存儲溫度的華氏值。`float`表示這是一個浮點數變數，可以包含小數部分。
+
+3. `float temp_c;`: 這行聲明了一個名為`temp_c`的浮點數變數，用於存儲溫度的攝氏值。
+
+4. `char line_text[50];`: 這行聲明了一個字符數組（字符陣列）`line_text`，長度為50個字符。這個數組用於存儲用戶輸入的文本。
+
+5. `int main() {`: 這是C程序的入口點，`main`函式的開始。
+
+6. `printf("Input a temperature (in Centigrade): ");`: 這行使用`printf`函式將一條消息打印到標準輸出（通常是終端或控制台），提示用戶輸入攝氏溫度。
+
+7. `fgets(line_text, sizeof(line_text), stdin);`: 這行使用`fgets`函式從標準輸入（`stdin`）讀取一行文本，並將其存儲在`line_text`數組中。`sizeof(line_text)`確保不超過50個字符。
+
+8. `sscanf(line_text, "%f", &temp_c);`: 這行使用`sscanf`函式從`line_text`中解析浮點數（`%f`），並將其存儲在`temp_c`變數中。
+
+9. `temp_f = ((9.0 / 5.0) * temp_c) + 32.0;`: 這行計算華氏溫度，將攝氏溫度`temp_c`轉換為華氏溫度，並將結果存儲在`temp_f`變數中。
+
+10. `printf("%f degrees Fahrenheit.\n", temp_f);`: 這行使用`printf`函式顯示轉換後的華氏溫度。
+
+11. `return(0);`: 這行結束`main`函式並返回0，表示程序的正常結束。
+
+這就是這段程式中每一行的語法和功能的簡要解釋。它執行攝氏溫度轉換為華氏溫度，並將結果顯示給用戶。
