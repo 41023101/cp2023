@@ -1,0 +1,45 @@
+#include <stdio.h>:
+
+這行程式碼包含了一個標準C庫的標頭文件，stdio.h，這個文件包含了用於輸入和輸出的函數，例如 printf 和 scanf。
+int main():
+
+這是主函數的開始，C程式的執行從這個函數開始。它返回一個整數，代表程式的退出狀態。
+float rec_width;:
+
+這行宣告了一個名為 rec_width 的浮點數變數，用來存儲矩形的寬度。
+float rec_height;:
+
+這行宣告了一個名為 rec_height 的浮點數變數，用來存儲矩形的高度。
+float rec_perimeter;:
+
+這行宣告了一個名為 rec_perimeter 的浮點數變數，用來存儲計算出來的矩形周長。
+char line_text[50];:
+
+這行宣告了一個名為 line_text 的字符數組（字串），用來暫時存儲從鍵盤輸入的數據。這個數組可以最多存儲50個字符。
+printf("Input the height of the Rectangle : ");:
+
+這行使用 printf 函數在終端上輸出提示信息，要求用戶輸入矩形的高度。
+fgets(line_text, sizeof(line_text), stdin);:
+
+這行使用 fgets 函數從標準輸入（stdin）讀取一行文字，並將其存儲在 line_text 數組中。 sizeof(line_text) 用於確保不超過 line_text 數組的大小。
+sscanf(line_text, "%f", &rec_height);:
+
+這行使用 sscanf 函數從 line_text 中解析浮點數，並將其存儲在 rec_height 變數中。這樣，用戶輸入的高度被轉換為浮點數型別，以便進行計算。
+printf("Input the width of the Rectangle : ");:
+
+這行使用 printf 函數在終端上輸出提示信息，要求用戶輸入矩形的寬度。
+fgets(line_text, sizeof(line_text), stdin);:
+
+這行再次使用 fgets 函數從標準輸入（stdin）讀取一行文字，並將其存儲在 line_text 數組中，以便用戶輸入寬度。
+sscanf(line_text, "%f", &rec_width);:
+
+這行使用 sscanf 函數從 line_text 中解析浮點數，並將其存儲在 rec_width 變數中。這樣，用戶輸入的寬度被轉換為浮點數型別，以便進行計算。
+rec_perimeter = 2.0 * (rec_height + rec_width);:
+
+這行計算矩形的周長，使用了矩形周長的公式：周長 = 2 * (寬度 + 高度)。
+printf("Perimeter of the Rectangle is : %f\n", rec_perimeter);:
+
+這行使用 printf 函數輸出計算得到的矩形周長，以浮點數格式輸出。
+return 0;:
+
+這行表示主函數的結束，並返回0，這意味著程式執行成功。

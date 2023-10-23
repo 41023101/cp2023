@@ -1,0 +1,36 @@
+#include <stdio.h>:
+
+這行程式碼包含了一個標準C庫的標頭文件，stdio.h，這個文件包含了用於輸入和輸出的函數，例如printf和scanf。
+float myradius;:
+
+這行宣告了一個名為myradius的浮點數變數，用來存儲球體的半徑。
+float myvolume;:
+
+這行宣告了一個名為myvolume的浮點數變數，用來存儲計算出來的球體體積。
+char line_text[50];:
+
+這行宣告了一個名為line_text的字符數組（字串），用來暫時存儲從鍵盤輸入的數據。這個數組可以最多存儲50個字符。
+const float PI = 3.14159265358979323846264338327950288419716939937510;:
+
+這行宣告了一個名為PI的浮點數常量，並賦予它π（pi）的數值，這是一個常數，用於計算球體體積。
+int main():
+
+這是主函數的開始，C程式的執行從這個函數開始。它返回一個整數，代表程式的退出狀態。
+printf("Input the radius of the sphere : ");:
+
+這行使用printf函數在終端上輸出提示信息，要求用戶輸入球體的半徑。
+fgets(line_text, sizeof(line_text), stdin);:
+
+這行使用fgets函數從標準輸入（stdin）讀取一行文字，並將其存儲在line_text數組中。sizeof(line_text)用於確保不超過line_text數組的大小。
+sscanf(line_text, "%f", &myradius);:
+
+這行使用sscanf函數從line_text中解析浮點數，並將其存儲在myradius變數中。這樣，用戶輸入的半徑被轉換為浮點數型別，以便進行計算。
+myvolume = (4.0 / 3.0) * PI * (myradius * myradius * myradius);:
+
+這行計算球體的體積，使用了球體體積的公式：V = (4/3) * π * r^3，其中myradius是半徑，PI是π的常數值。
+printf("The volume of sphere is %f.\n", myvolume);:
+
+這行使用printf函數輸出計算得到的球體體積，以浮點數格式輸出。
+return(0);:
+
+這行表示主函數的結束，並返回0，這意味著程式執行成功。
