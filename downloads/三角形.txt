@@ -1,0 +1,24 @@
+#include <stdio.h>:
+
+這行程式碼包含了一個標準C庫的標頭文件，stdio.h，這個文件包含了用於輸入和輸出的函數，例如 printf 和 scanf。
+int main():
+
+這是主函數的開始，C程式的執行從這個函數開始。它返回一個整數，代表程式的退出狀態。
+int ang1, ang2, ang3;:
+
+這行宣告了三個整數變數，ang1、ang2 和 ang3，它們用來存儲三角形的三個角度。
+printf("Input two angles of triangle separated by comma : ");:
+
+這行使用 printf 函數在終端上輸出提示信息，要求用戶輸入兩個角度，並使用逗號分隔它們。
+scanf("%d, %d", &ang1, &ang2);:
+
+這行使用 scanf 函數從標準輸入中讀取兩個整數，並將它們存儲在 ang1 和 ang2 變數中。逗號和空格用於指示用戶輸入時需要用逗號和空格分隔數字。
+ang3 = 180 - (ang1 + ang2);:
+
+這行計算第三個角度的數值，根據三角形的性質，三個角的總和等於180度，因此第三個角的度數等於180減去前兩個角度的度數之和。
+printf("Third angle of the triangle : %d\n", ang3);:
+
+這行使用 printf 函數輸出計算得到的第三個角度，以整數格式輸出，並顯示 "Third angle of the triangle" 的文字。
+return 0;:
+
+這行表示主函數的結束，並返回0，這意味著程式執行成功。
