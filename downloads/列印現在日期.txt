@@ -1,0 +1,48 @@
+#include <time.h>:
+
+這行程式碼包含了標準C庫的time.h標頭文件，這個文件包含了與時間相關的函數和數據類型。
+#include <stdio.h>:
+
+這行程式碼包含了標準C庫的stdio.h標頭文件，這個文件包含了輸入和輸出相關的函數，例如 printf 和 fprintf。
+#include <stdlib.h>:
+
+這行程式碼包含了標準C庫的stdlib.h標頭文件，這個文件包含了一些標準庫函數，例如 exit。
+int main(void):
+
+這是主函數的開始，C程式的執行從這個函數開始。它返回一個整數，void 表示不接受任何參數。
+time_t cur_time;:
+
+這行宣告了一個 time_t 型別的變數 cur_time，用來存儲當前的時間。
+char* cur_t_string;:
+
+這行宣告了一個指向字符的指針 cur_t_string，用來存儲時間的文本表示。
+cur_time = time(NULL);:
+
+這行使用 time 函數來獲取當前的時間，並將其存儲在 cur_time 變數中。time(NULL) 返回當前時間的秒數。
+if (cur_time == ((time_t)-1)):
+
+這行檢查 cur_time 是否等於 -1，如果是，表示獲取時間失敗。
+(void) fprintf(stderr, "Failure to get the current date and time.\n");:
+
+如果獲取時間失敗，這行使用 fprintf 函數將錯誤信息輸出到標準錯誤流 (stderr)，指示獲取當前日期和時間失敗。
+exit(EXIT_FAILURE);:
+
+這行使用 exit 函數結束程式的執行，並返回 EXIT_FAILURE，這表示程式以錯誤結束。
+cur_t_string = ctime(&cur_time);:
+
+這行使用 ctime 函數將 cur_time 變數中的時間轉換為本地時間格式，並將結果存儲在 cur_t_string 指針中。
+if (cur_t_string == NULL):
+
+這行檢查 cur_t_string 是否為空（NULL），如果是，表示轉換時間格式失敗。
+(void) fprintf(stderr, "Failure to convert the current date and time.\n");:
+
+如果轉換時間格式失敗，這行使用 fprintf 函數將錯誤信息輸出到標準錯誤流 (stderr)，指示轉換當前日期和時間失敗。
+exit(EXIT_FAILURE);:
+
+這行再次使用 exit 函數結束程式的執行，並返回 EXIT_FAILURE，這表示程式以錯誤結束。
+(void) printf("\n The Current time is : %s \n", cur_t_string);:
+
+這行使用 printf 函數將格式化的時間字符串輸出到標準輸出。時間字符串存儲在 cur_t_string 指針中。
+exit(EXIT_SUCCESS);:
+
+這行使用 exit 函數結束程式的執行，並返回 EXIT_SUCCESS，這表示程式以成功結束。
