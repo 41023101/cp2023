@@ -1,0 +1,33 @@
+#include <stdio.h>:
+
+這行程式碼包含了一個標準C庫的標頭文件，stdio.h，這個文件包含了用於輸入和輸出的函數，例如 printf 和 scanf。
+int num1, num2, num3;:
+
+這行宣告了三個整數變數，num1、num2 和 num3，用來存儲輸入的三個數。
+int sum;:
+
+這行宣告了一個整數變數 sum，用來存儲計算出來的三個數的總和。
+char line_text[50];:
+
+這行宣告了一個名為 line_text 的字符數組（字串），用來暫時存儲從鍵盤輸入的數據。這個數組可以最多存儲50個字符。
+int main():
+
+這是主函數的開始，C程式的執行從這個函數開始。它返回一個整數，代表程式的退出狀態。
+printf("Input three numbers separated by comma : ");:
+
+這行使用 printf 函數在終端上輸出提示信息，要求用戶輸入三個數，並使用逗號分隔。
+fgets(line_text, sizeof(line_text), stdin);:
+
+這行使用 fgets 函數從標準輸入（stdin）讀取一行文字，並將其存儲在 line_text 數組中。 sizeof(line_text) 用於確保不超過 line_text 數組的大小。
+sscanf(line_text, "%d, %d, %d", &num1, &num2, &num3);:
+
+這行使用 sscanf 函數從 line_text 中解析三個整數，並將它們分別存儲在 num1、num2 和 num3 變數中。逗號和空格用於指示用戶輸入時需要用逗號和空格分隔數字。
+sum = num1 + num2 + num3;:
+
+這行計算三個數的總和，將它們相加，並將結果存儲在 sum 變數中。
+printf("The sum of three numbers : %d\n", sum);:
+
+這行使用 printf 函數輸出計算得到的總和，以整數格式輸出，並顯示 "The sum of three numbers" 的文字。
+return(0);:
+
+這行表示主函數的結束，並返回0，這意味著程式執行成功。
