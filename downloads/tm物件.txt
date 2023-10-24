@@ -1,0 +1,40 @@
+#include <stdio.h>:
+
+這行程式碼包含了標準C庫的 stdio.h 標頭文件，這個文件包含了輸入和輸出相關的函數，例如 printf 和 puts。
+#include <time.h>:
+
+這行程式碼包含了標準C庫的 time.h 標頭文件，這個文件包含了時間相關的函數和數據類型。
+#include <locale.h>:
+
+這行程式碼包含了標準C庫的 locale.h 標頭文件，這個文件用於設置語言區域和地區設置。
+int main(void):
+
+這是主函數的開始，C程式的執行從這個函數開始。它返回一個整數，void 表示不接受任何參數。
+char time_buff[70];:
+
+這行宣告了一個字符數組 time_buff，用來存儲時間的文本表示。數組的大小為70個字符，足夠容納輸出的文本。
+struct tm mytime = { .tm_year=116, .tm_mon=8, .tm_mday=2, .tm_hour=16, .tm_min=30, .tm_sec=32 };:
+
+這行宣告了一個 tm 結構體變數 mytime，用於表示日期和時間。這個結構體初始化為特定的日期和時間。例如，.tm_year=116 表示年份為2016年，.tm_mon=8 表示月份為9月，以此類推。
+printf("\n The textual representation of specified date and time :\n");:
+
+這行使用 printf 函數輸出一條信息，表示即將輸出特定日期和時間的文本表示。
+if (strftime(time_buff, sizeof time_buff, "%B %c %P" , &mytime)):
+
+這行使用 strftime 函數來將 mytime 結構體中的日期和時間轉換為文本格式，並存儲在 time_buff 中。 %B、%c 和 %P 是格式控制參數，用於指示輸出的日期和時間的格式。
+puts(time_buff);:
+
+這行使用 puts 函數輸出 time_buff 中的文本表示。
+else:
+
+如果 strftime 函數返回失敗，執行以下操作。
+puts("strftime failed");:
+
+這行使用 puts 函數輸出一條信息，指示 strftime 函數的失敗。
+setlocale(LC_TIME, "el_GR.utf8");:
+
+這行使用 setlocale 函數設置語言區域，將日期和時間輸出轉換為希臘語的格式。LC_TIME 是設置日期和時間的語言區域選項。
+printf("\n");:
+
+這行使用 printf 函數輸出一個空行，用於分隔不同輸出。
+最終，程式將輸出指定日期和時間的不同文本表示形式，根據語言區域的設置。
